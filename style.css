@@ -1,0 +1,400 @@
+:root {
+  --dt-primary: #0E8F6F;
+  --dt-primary-dark: #0A6E55;
+  --dt-ink: #1C2B27;
+  --dt-muted: #5B6B66;
+  --dt-tint: #EEF6F3;
+  --dt-line: #D5E4DF;
+  --dt-white: #FFFFFF;
+  --dt-error: #B3261E;
+  --dt-font-head: "Literata", Georgia, "Times New Roman", serif;
+  --dt-font-body: "Figtree", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--dt-font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--dt-ink);
+  background-color: var(--dt-white);
+}
+
+.dt-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1,
+h2 {
+  font-family: var(--dt-font-head);
+  line-height: 1.25;
+  color: var(--dt-ink);
+}
+
+h1 {
+  font-size: 44px;
+  margin: 0 0 20px;
+}
+
+h2 {
+  font-size: 30px;
+  margin: 0 0 18px;
+}
+
+p {
+  margin: 0 0 18px;
+}
+
+a {
+  color: var(--dt-primary-dark);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--dt-primary);
+  outline-offset: 2px;
+}
+
+/* Hero */
+.dt-hero {
+  padding: 72px 0 64px;
+  background-color: var(--dt-tint);
+  border-bottom: 4px solid var(--dt-primary);
+}
+
+.dt-hero-source {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dt-primary-dark);
+  margin-bottom: 12px;
+}
+
+.dt-hero-lede {
+  font-size: 20px;
+  color: var(--dt-muted);
+  margin-bottom: 28px;
+}
+
+/* Buttons */
+.dt-btn {
+  display: inline-block;
+  padding: 14px 26px;
+  font-family: var(--dt-font-body);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--dt-white);
+  background-color: var(--dt-primary);
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dt-btn:hover {
+  background-color: var(--dt-primary-dark);
+}
+
+.dt-btn-light {
+  color: var(--dt-primary-dark);
+  background-color: var(--dt-white);
+}
+
+.dt-btn-light:hover {
+  background-color: var(--dt-tint);
+}
+
+/* Sections */
+.dt-section {
+  padding: 56px 0;
+}
+
+.dt-section-tint {
+  background-color: var(--dt-tint);
+}
+
+/* Findings */
+.dt-findings {
+  margin: 0;
+}
+
+.dt-finding {
+  padding: 18px 0 18px 20px;
+  border-left: 4px solid var(--dt-primary);
+  margin-bottom: 18px;
+  background-color: var(--dt-white);
+}
+
+.dt-finding dt {
+  font-weight: 700;
+  margin-bottom: 6px;
+  padding-right: 20px;
+}
+
+.dt-finding dd {
+  margin: 0;
+  padding-right: 20px;
+  color: var(--dt-muted);
+}
+
+/* Comparison bars */
+.dt-compare {
+  margin: 28px 0;
+  padding: 24px;
+  border: 1px solid var(--dt-line);
+  border-radius: 10px;
+}
+
+.dt-compare-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 100px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.dt-compare-label {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.dt-compare-bar {
+  display: block;
+  height: 22px;
+  border-radius: 4px;
+}
+
+.dt-compare-bar-jump {
+  width: 100%;
+  background-color: var(--dt-primary);
+}
+
+.dt-compare-bar-control {
+  width: 55%;
+  background-color: var(--dt-line);
+}
+
+.dt-compare-value {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.dt-compare-note {
+  font-size: 14px;
+  color: var(--dt-muted);
+  margin: 6px 0 0;
+}
+
+/* Calculator */
+.dt-calc {
+  margin-top: 28px;
+  padding: 28px;
+  border: 1px solid var(--dt-line);
+  border-radius: 12px;
+  background-color: var(--dt-white);
+}
+
+.dt-toggle {
+  display: inline-flex;
+  border: 1px solid var(--dt-primary);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+
+.dt-toggle-btn {
+  padding: 10px 18px;
+  font-family: var(--dt-font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dt-primary-dark);
+  background-color: var(--dt-white);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dt-toggle-btn.is-active {
+  color: var(--dt-white);
+  background-color: var(--dt-primary);
+}
+
+.dt-field {
+  display: block;
+  border: none;
+  padding: 0;
+  margin: 0 0 18px;
+}
+
+.dt-field > span,
+.dt-field legend {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding: 0;
+}
+
+.dt-radio {
+  margin-right: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dt-field input[type="number"] {
+  width: 100%;
+  max-width: 260px;
+  padding: 12px 14px;
+  font-family: var(--dt-font-body);
+  font-size: 16px;
+  color: var(--dt-ink);
+  border: 1px solid var(--dt-line);
+  border-radius: 8px;
+  background-color: var(--dt-white);
+  transition: box-shadow 0.2s ease;
+}
+
+.dt-field input[type="number"]:focus {
+  box-shadow: inset 0 0 0 1px var(--dt-primary);
+}
+
+.dt-pair {
+  display: flex;
+  gap: 10px;
+  max-width: 260px;
+}
+
+.dt-pair input[type="number"] {
+  max-width: none;
+}
+
+.dt-calc-btn {
+  margin-top: 6px;
+}
+
+.dt-calc-error {
+  margin: 16px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dt-error);
+}
+
+.dt-calc-result {
+  margin-top: 22px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--dt-tint);
+}
+
+.dt-calc-result-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dt-muted);
+  margin-bottom: 4px;
+}
+
+.dt-calc-result-value {
+  font-family: var(--dt-font-head);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--dt-primary-dark);
+  margin-bottom: 4px;
+}
+
+.dt-calc-result-range {
+  font-size: 16px;
+  margin: 0;
+}
+
+.dt-calc-note {
+  margin: 22px 0 0;
+  font-size: 14px;
+  color: var(--dt-muted);
+}
+
+/* Tips */
+.dt-tips {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.dt-tips li {
+  margin-bottom: 12px;
+}
+
+/* CTA */
+.dt-cta {
+  padding: 64px 0;
+  background-color: var(--dt-primary-dark);
+  color: var(--dt-white);
+}
+
+.dt-cta h2 {
+  color: var(--dt-white);
+}
+
+/* Footer */
+.dt-footer {
+  padding: 32px 0;
+  font-size: 14px;
+  color: var(--dt-muted);
+  border-top: 1px solid var(--dt-line);
+}
+
+.dt-footer p {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 17px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  .dt-hero {
+    padding: 52px 0 44px;
+  }
+
+  .dt-section {
+    padding: 44px 0;
+  }
+
+  .dt-calc {
+    padding: 20px;
+  }
+
+  .dt-compare-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .dt-compare-bar {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
